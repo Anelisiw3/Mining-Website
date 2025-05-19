@@ -1,28 +1,24 @@
+// src/components/Navbar.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ onScrollTo }) => {
   return (
-    <nav className="bg-white shadow-md py-4 fixed top-0 left-0 w-full z-10">
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Left spacer for balance */}
-        <div className="w-1/3" />
-
-        {/* Center nav links */}
-        <div className="w-1/3 flex justify-center space-x-6">
-          <Link to="/" className="text-lg font-medium text-gray-700 hover:text-blue-600">Home</Link>
-          <Link to="/about" className="text-lg font-medium text-gray-700 hover:text-blue-600">About Us</Link>
-          <Link to="/market" className="text-lg font-medium text-gray-700 hover:text-blue-600">Market Insights</Link>
-          <Link to="/contact" className="text-lg font-medium text-gray-700 hover:text-blue-600">Contact</Link>
+    <div className="absolute top-0 left-0 w-full z-50 bg-transparent text-white">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 className="text-xl font-bold">E-Mining</h1>
+        <div className="flex space-x-6">
+          <button onClick={() => onScrollTo('home')}>Home</button>
+          <button onClick={() => onScrollTo('about')}>About</button>
+          <button onClick={() => onScrollTo('market')}>Market Insights</button>
+          <button onClick={() => onScrollTo('explore')}>Explore More</button>
+          <button onClick={() => onScrollTo('contact')}>Contact</button>
         </div>
-
-        {/* Right buttons */}
-        <div className="w-1/3 flex justify-end space-x-4">
-          <Link to="/login" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Login</Link>
-          <Link to="/admin" className="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700">Admin</Link>
+        <div className="flex space-x-2">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded">Login</button>
+          <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded">Admin</button>
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 

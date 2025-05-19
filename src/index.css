@@ -7,6 +7,8 @@
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f4; /* Light grey background */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 h1, h2, h3 {
@@ -53,4 +55,10 @@ button:hover {
 .card .card-description {
   font-size: 1rem;
   color: #666;
+}
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
